@@ -1,0 +1,103 @@
+{
+	"info": {
+		"_postman_id": "5314f847-6b31-4a00-8d5d-29b3e84f608d",
+		"name": "paymob credit API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31348946"
+	},
+	"item": [
+		{
+			"name": "Get Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"api_key\": \"ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmpiR0Z6Y3lJNklrMWxjbU5vWVc1MElpd2ljSEp2Wm1sc1pWOXdheUk2T1RReU5EWXhMQ0p1WVcxbElqb2lhVzVwZEdsaGJDSjkuYXFYQUQtdmtCRXFIakEwb19sVVk2RmdhcGF0QWJwaU15QUU3X0JybFplSDY1US1EY1FxbXhBRXNvdEg1RmxCSzI2Wk41VDJRb0FLeGN0RHlwcnd1R2c=\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://accept.paymob.com/api/auth/tokens",
+					"protocol": "https",
+					"host": [
+						"accept",
+						"paymob",
+						"com"
+					],
+					"path": [
+						"api",
+						"auth",
+						"tokens"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"auth_token\":  \"ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmpiR0Z6Y3lJNklrMWxjbU5vWVc1MElpd2ljSEp2Wm1sc1pWOXdheUk2T1RReU5EWXhMQ0p3YUdGemFDSTZJbVV4WldVM05tUmtZamxpT0RVM01HSTRNRE13TVdVMk5EWXlaR0V6TW1Ga05UQTRPREkwTkdOalpEWTFaVEZpWldFd1pHWXhaamd3TmpJNE9HSXlabUlpTENKbGVIQWlPakUzTURBNU5UVTVOemg5LnVoQTBXQkZIcnR0UHhOQXg3TnZvdmpSWldfdzF1VVRqRkZyQkhwVzdUSHBoT3pNX3BzV1lIUWFESDJMQUVOaHFiQ0pDSGFQY1AwR0FzNjVmOWp5S0xB\",\r\n  \"delivery_needed\": \"false\",\r\n  \"amount_cents\": \"1000\",\r\n  \"currency\": \"EGP\",\r\n  \"merchant_order_id\": 6,\r\n  \"items\": [\r\n    {\r\n        \"name\": \"ASC1515\",\r\n        \"amount_cents\": \"500000\",\r\n        \"description\": \"Smart Watch\",\r\n        \"quantity\": \"1\"\r\n    },\r\n    { \r\n        \"name\": \"ERT6565\",\r\n        \"amount_cents\": \"200000\",\r\n        \"description\": \"Power Bank\",\r\n        \"quantity\": \"1\"\r\n    }\r\n    ],\r\n  \"shipping_data\": {\r\n    \"apartment\": \"803\", \r\n    \"email\": \"claudette09@exa.com\", \r\n    \"floor\": \"42\", \r\n    \"first_name\": \"Clifford\", \r\n    \"street\": \"Ethan Land\", \r\n    \"building\": \"8028\", \r\n    \"phone_number\": \"+86(8)9135210487\", \r\n    \"postal_code\": \"01898\", \r\n     \"extra_description\": \"8 Ram , 128 Giga\",\r\n    \"city\": \"Jaskolskiburgh\", \r\n    \"country\": \"CR\", \r\n    \"last_name\": \"Nicolas\", \r\n    \"state\": \"Utah\"\r\n  },\r\n    \"shipping_details\": {\r\n        \"notes\" : \" test\",\r\n        \"number_of_packages\": 1,\r\n        \"weight\" : 1,\r\n        \"weight_unit\" : \"Kilogram\",\r\n        \"length\" : 1,\r\n        \"width\" :1,\r\n        \"height\" :1,\r\n        \"contents\" : \"product of some sorts\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://accept.paymob.com/api/ecommerce/orders",
+					"protocol": "https",
+					"host": [
+						"accept",
+						"paymob",
+						"com"
+					],
+					"path": [
+						"api",
+						"ecommerce",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "payment_key",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"auth_token\":  \"ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmpiR0Z6Y3lJNklrMWxjbU5vWVc1MElpd2ljSEp2Wm1sc1pWOXdheUk2T1RReU5EWXhMQ0p3YUdGemFDSTZJbVV4WldVM05tUmtZamxpT0RVM01HSTRNRE13TVdVMk5EWXlaR0V6TW1Ga05UQTRPREkwTkdOalpEWTFaVEZpWldFd1pHWXhaamd3TmpJNE9HSXlabUlpTENKbGVIQWlPakUzTURBNU5UVTVOemg5LnVoQTBXQkZIcnR0UHhOQXg3TnZvdmpSWldfdzF1VVRqRkZyQkhwVzdUSHBoT3pNX3BzV1lIUWFESDJMQUVOaHFiQ0pDSGFQY1AwR0FzNjVmOWp5S0xB\",\r\n  \"amount_cents\": \"100\", \r\n  \"expiration\": 3600, \r\n  \"order_id\": \"166767760\",\r\n  \"billing_data\": {\r\n    \"apartment\": \"803\", \r\n    \"email\": \"claudette09@exa.com\", \r\n    \"floor\": \"42\", \r\n    \"first_name\": \"Clifford\", \r\n    \"street\": \"Ethan Land\", \r\n    \"building\": \"8028\", \r\n    \"phone_number\": \"+86(8)9135210487\", \r\n    \"shipping_method\": \"PKG\", \r\n    \"postal_code\": \"01898\", \r\n    \"city\": \"Jaskolskiburgh\", \r\n    \"country\": \"CR\", \r\n    \"last_name\": \"Nicolas\", \r\n    \"state\": \"Utah\"\r\n  }, \r\n  \"currency\": \"EGP\", \r\n  \"integration_id\": 4367700\r\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://accept.paymob.com/api/acceptance/payment_keys",
+					"protocol": "https",
+					"host": [
+						"accept",
+						"paymob",
+						"com"
+					],
+					"path": [
+						"api",
+						"acceptance",
+						"payment_keys"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
